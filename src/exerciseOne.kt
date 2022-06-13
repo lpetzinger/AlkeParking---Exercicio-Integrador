@@ -23,9 +23,5 @@ enum class VehicleType(val type: String, fee: Int) {
     BUS("Bus", 30)
 }
 
-/*
-Data de entrada armazenada
-checkInTime
-discountCard
- */
+
 
