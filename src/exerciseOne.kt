@@ -7,7 +7,9 @@ data class ParkingSpace(var vehicle: Vehicle){
 }
 
 data class Parking(val vehicles: MutableSet<Vehicle> = mutableSetOf()) {
+        private val maxNumberOfVehicles = 20
         fun setVehicles(value: Vehicle) = vehicles.add(value)
+        fun addVehicle (vehicle: Vehicle) = vehicles.size < maxNumberOfVehicles
     }
 
 data class Vehicle(val plate: String, val type: VehicleType, val discountCard: String?, val checkInTime: Calendar) {
