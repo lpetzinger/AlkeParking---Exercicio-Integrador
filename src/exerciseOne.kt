@@ -14,6 +14,19 @@ data class Vehicle(val plate: String) {
     }
 
     override fun hashCode(): Int = this.plate.hashCode()
+    }
+
+/*
+propriedades:
+tipo
+tarifa
+ */
+enum class VehicleType(val type: String, fee: Int) {
+    CAR("Car", 20),
+    MOTORCYCLE("Motorcycle", 15),
+    MICROBUS("Micro Bus",25 ),
+    BUS("Bus", 30)
 }
+
 
 
