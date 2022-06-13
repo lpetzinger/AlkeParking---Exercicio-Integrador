@@ -1,9 +1,26 @@
 import java.util.*
 
-data class ParkingSpace(var vehicle: Vehicle){
+data class ParkingSpace(var vehicle: Vehicle, val parking: Parking ){
     val MINUTES_IN_MILISECONDS = 60000
     val parkedTime: Long
         get() = (Calendar.getInstance().timeInMillis - vehicle.checkInTime.timeInMillis)/ MINUTES_IN_MILISECONDS
+
+    fun checkoutVehicle(plate: String){
+        if(vehicle.plate == plate){
+            parking.vehicles.remove(vehicle)
+            onSuccess(10)
+        }else{
+            onError()
+        }
+
+    }
+    fun onSuccess(fee: Int){
+
+    }
+
+    fun onError(){
+
+    }
 }
 
 data class Parking(val vehicles: MutableSet<Vehicle> = mutableSetOf()) {
