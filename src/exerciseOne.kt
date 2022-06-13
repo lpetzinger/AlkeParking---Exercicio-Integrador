@@ -7,24 +7,31 @@ data class ParkingSpace(var vehicle: Vehicle, val parking: Parking ){
 
     fun checkoutVehicle(plate: String){
         if(vehicle.plate == plate){
+            val totalFee = calculateFee(vehicle.type, parkedTime)
+            onSuccess(totalFee)
             parking.vehicles.remove(vehicle)
-            onSuccess(calculateFee(vehicle.type, parkedTime))
         } else {
             onError()
         }
 
     }
    private fun onSuccess(fee: Int){
+       parking.totalVehicles = Pair(parking.totalVehicles.first + 1, parking.totalVehicles.second + fee)
+       println("Your fee is $$fee. Come back soon.")
+    }
 
+    fun totalEarnings() {
+        println("${parking.totalVehicles.first} vehicles have checked out and have earnings of $${parking.totalVehicles.second}.")
     }
 
     private fun onError(){
-
+        println("Sorry, the check-out failed")
     }
 
     private fun calculateFee(type: VehicleType, parkedTime: Int) : Int {
         var discountCard = 0
-        if(!vehicle.discountCard.isNullOrEmpty()) discountCard = 15/100
+        val hasDiscountCard = vehicle.discountCard.isNullOrEmpty()
+        if(!hasDiscountCard) discountCard = 15/100
 
         if(parkedTime <= 120 ) {
             return type.fee - (type.fee*discountCard)
@@ -36,6 +43,7 @@ data class ParkingSpace(var vehicle: Vehicle, val parking: Parking ){
 
 data class Parking(val vehicles: MutableSet<Vehicle> = mutableSetOf()) {
         private val maxNumberOfVehicles = 20
+        var totalVehicles = Pair(0, 0)
         fun addVehicle (vehicle: Vehicle): Boolean {
             if(vehicles.size < 20){
                 println("Welcome to AlkeParking!")
