@@ -1,6 +1,8 @@
+import java.util.*
+
 fun main() {
     println("Teste main")
-    var vehicleOne = Vehicle("122344")
+    var vehicleOne = Vehicle("122344", null, Calendar.getInstance())
 
     println("veiculo: $vehicleOne")
 
