@@ -1,7 +1,7 @@
 ## AlkeParking Exercicio | Integrador Android
 ### Dupla: Lucas Petzinger e Oryange Strifezze
 
-Exercicio integrador BootCamp Kotlin composto por 12 requisitos.
+Exercicio integrador BootCamp Android. Composto por 12 requisitos.
 Feito em pair program.
 
 AlkeParking
