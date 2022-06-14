@@ -66,9 +66,9 @@ fun main() {
     println(parking.vehicles.size)
 
     parking.listVehicles()
-    val parkingSpace = ParkingSpace(car20, parking)
+    val parkingSpace = ParkingSpace(car19, parking)
     println(parkingSpace)
-    println(parkingSpace.checkoutVehicle("Car1"))
+    println(parkingSpace.checkoutVehicle("Car19"))
 
 
 
