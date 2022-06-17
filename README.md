@@ -2,10 +2,10 @@
 ### Desenvolvedores: [Lucas Petzinger](https://github.com/lpetzinger) e [Oryange Strifezze](https://github.com/oryangestrifezze)
 #### Todo o projeto foi executado em formato de Pair Programming, com finalidade de consolidar os conhecimentos adquiridos ao longo do primeiro módulo do Bootcamp de Android.
 
-###AlkeParking
+### AlkeParking
 É um estacionamento que permite estacionar diversos tipos de veículos (carro, motocicleta, micro-ônibus e ônibus) com capacidade máxima de 20 veículos.
 
-###Requisitos do Sistema
+### Requisitos do Sistema
 - Quando um veículo vai entrar no estacionamento a placa e o tipo são inseridos, sendo verificado que não haja outro veículo com a mesma placa no estacionamento.
 
 - Quando um veículo vai ser retirado, é cobrada uma tarifa determinada pelos seguintes regulamentos.
