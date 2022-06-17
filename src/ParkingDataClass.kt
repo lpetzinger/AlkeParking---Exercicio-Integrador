@@ -11,9 +11,9 @@ data class Parking(val vehicles: MutableSet<Vehicle> = mutableSetOf()) {
         if(vehicles.size < 20){
             println("Welcome to AlkeParking!")
             return vehicles.add(vehicle)
-        } else{
-            println("Sorry, the check-in failed")
-            return false
         }
+        println("Sorry, the check-in failed")
+        return false
+
     }
 }

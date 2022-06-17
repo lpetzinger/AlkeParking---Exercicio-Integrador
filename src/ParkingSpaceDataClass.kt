@@ -1,7 +1,8 @@
 import java.util.*
 
+private const val MINUTES_IN_MILISECONDS = 60000
+
 data class ParkingSpace(var vehicle: Vehicle, val parking: Parking) {
-    private val MINUTES_IN_MILISECONDS = 60000
     private val parkedTime: Int
 
     get() = ((Calendar.getInstance().timeInMillis - vehicle.checkInTime.timeInMillis) / MINUTES_IN_MILISECONDS).toInt()
